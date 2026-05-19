@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - EcoTech</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .resultado {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f1f5f9;
+            font-weight: bold;
+            text-align: center;
+            display: none;
+        }
+
+        .correta {
+            color: #16a34a;
+        }
+
+        .errada {
+            color: #dc2626;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">Sobre</a>
+            <a href="pagina-gh.html">Consumo</a>
+            <a href="impactos.html">Impactos</a>
+            <a href="impactos-saude.html">Saúde</a>
+            <a href="pagina4.html">Reciclagem</a>
+            <a href="reciclagem.html">Como Reciclar</a>
+            <a href="aluno5-descarte.html">Descarte</a>
+            <a href="coleta.html">Coleta</a>
+            <a href="quiz.html">Quiz</a>
+        </nav>
+    </header>
+
+    <main class="container" style="max-width: 700px;">
+
+        <h1>Quiz Educativo</h1>
+
+        <form id="quizForm">
+
+            <!-- Pergunta 1 -->
+            <div class="quiz-question">
+                <p>1. Onde devemos jogar pilhas usadas?</p>
+
+                <label>
+                    <input type="radio" name="q1" value="0">
+                    No lixo comum
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="0">
+                    No vaso sanitário
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="1">
+                    Em pontos de coleta específicos
+                </label>
+            </div>
+
+            <!-- Pergunta 2 -->
+            <div class="quiz-question">
+                <p>2. Qual material perigoso existe em monitores antigos?</p>
+
+                <label>
+                    <input type="radio" name="q2" value="1">
+                    Chumbo
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="0">
+                    Madeira
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="0">
+                    Papel
+                </label>
+            </div>
+
+            <!-- Pergunta 3 -->
+            <div class="quiz-question">
+                <p>3. O que é obsolescência programada?</p>
+
+                <label>
+                    <input type="radio" name="q3" value="0">
+                    Quando um aparelho dura muitos anos
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="1">
+                    Quando produtos são feitos para durar menos
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="0">
+                    Um método de reciclagem
+                </label>
+            </div>
+
+            <!-- Pergunta 4 -->
+            <div class="quiz-question">
+                <p>4. Qual destes materiais pode contaminar a água?</p>
+
+                <label>
+                    <input type="radio" name="q4" value="0">
+                    Papelão
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="1">
+                    Baterias descartadas incorretamente
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="0">
+                    Vidro limpo
+                </label>
+            </div>
+
+            <!-- Pergunta 5 -->
+            <div class="quiz-question">
+                <p>5. O que devemos fazer antes de descartar um celular?</p>
+
+                <label>
+                    <input type="radio" name="q5" value="0">
+                    Jogar no lixo comum
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="1">
+                    Limpar os dados e resetar o aparelho
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="0">
+                    Quebrar a tela
+                </label>
+            </div>
+
+            <div class="center-action">
+                <button type="button" class="btn" onclick="corrigirQuiz()">
+                    Ver Resultado
+                </button>
+            </div>
+
+        </form>
+
+        <div id="resultado" class="resultado"></div>
+
+        <div class="center-action">
+            <a href="index.html" class="btn btn-secondary">
+                Voltar para Home
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 EcoTech - Preserve o Meio Ambiente</p>
+    </footer>
+
+    <script>
+        function corrigirQuiz() {
+
+            let total = 0;
+
+            const respostas = document.querySelectorAll('input[type="radio"]:checked');
+
+            respostas.forEach((resposta) => {
+                total += Number(resposta.value);
+            });
+
+            const resultado = document.getElementById("resultado");
+
+            resultado.style.display = "block";
+
+            if (total === 5) {
+                resultado.innerHTML =
+                    "<span class='correta'>🏆 Parabéns! Você acertou tudo! (" + total + "/5)</span>";
+            }
+
+            else if (total >= 3) {
+                resultado.innerHTML =
+                    "<span class='correta'>✅ Muito bom! Você acertou " + total + " de 5 perguntas.</span>";
+            }
+
+            else {
+                resultado.innerHTML =
+                    "<span class='errada'>❌ Você acertou apenas " + total + " de 5. Tente novamente!</span>";
+            }
+        }
+    </script>
+
+</body>
+</html>

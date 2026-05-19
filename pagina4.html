@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processo de Reciclagem - EcoTech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">Sobre</a>
+            <a href="pagina-gh.html">Consumo</a>
+            <a href="impactos.html">Impactos</a>
+            <a href="impactos-saude.html">Saúde</a>
+            <a href="pagina4.html">Reciclagem</a>
+            <a href="reciclagem.html">Como Reciclar</a>
+            <a href="aluno5-descarte.html">Descarte</a>
+            <a href="coleta.html">Coleta</a>
+            <a href="quiz.html">Quiz</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>♻️ Reciclagem de Eletrônicos</h1>
+        <h2>Real vs. Problemática</h2>
+
+        <!-- CARD 1 -->
+        <div class="interactive-card">
+            <h2 onclick="toggle('real')">✅ Reciclagem Real</h2>
+            <div id="real" class="content" hidden>
+                <p>Processo industrial seguro, feito em ambientes controlados para evitar contaminação ambiental e proteger trabalhadores.</p>
+                <button class="toggle-btn" onclick="subToggle('real1')">Etapas</button>
+                <button class="toggle-btn" onclick="subToggle('real2')">Tecnologia</button>
+
+                <div id="real1" hidden>
+                    <ul class="styled-list">
+                        <li>Desmontagem manual de peças perigosas</li>
+                        <li>Trituração mecânica dos equipamentos</li>
+                        <li>Separação por sensores magnéticos e ópticos</li>
+                        <li>Refino químico controlado</li>
+                    </ul>
+                </div>
+
+                <div id="real2" hidden>
+                    <p>Uso de máquinas avançadas que identificam materiais automaticamente, reduzindo o desperdício e aumentando a eficiência.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="interactive-card">
+            <h2 onclick="toggle('urbana')">💰 Mineração Urbana</h2>
+            <div id="urbana" class="content" hidden>
+                <p>Recuperação de metais valiosos a partir do lixo eletrônico, transformando resíduos em recursos econômicos.</p>
+                <button class="toggle-btn" onclick="subToggle('urbana1')">Metais</button>
+                <button class="toggle-btn" onclick="subToggle('urbana2')">Importância</button>
+
+                <div id="urbana1" hidden>
+                    <ul class="styled-list">
+                        <li>Ouro</li>
+                        <li>Prata</li>
+                        <li>Paládio</li>
+                        <li>Cobre</li>
+                    </ul>
+                </div>
+
+                <div id="urbana2" hidden>
+                    <p>Placas de circuito possuem alta concentração de metais preciosos, muitas vezes superior à mineração tradicional.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="interactive-card danger">
+            <h2 class="danger-text" onclick="toggle('problema')">⚠️ Problema Global</h2>
+            <div id="problema" class="content" hidden>
+                <p>Grande parte do lixo eletrônico é exportada ilegalmente para países em desenvolvimento.</p>
+                <button class="toggle-btn" onclick="subToggle('prob1')">Como acontece</button>
+                <button class="toggle-btn" onclick="subToggle('prob2')">Consequências</button>
+
+                <div id="prob1" hidden>
+                    <p>Equipamentos são enviados como "doação" ou "reuso", mas acabam descartados sem tratamento adequado.</p>
+                </div>
+
+                <div id="prob2" hidden>
+                    <p>Gera poluição, exploração de trabalhadores e contaminação de comunidades inteiras.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="interactive-card danger">
+            <h2 class="danger-text" onclick="toggle('primitiva')">☠️ Reciclagem Primitiva</h2>
+            <div id="primitiva" class="content" hidden>
+                <p>Forma informal e extremamente perigosa de extrair metais.</p>
+                <button class="toggle-btn" onclick="subToggle('prim1')">Métodos</button>
+                <button class="toggle-btn" onclick="subToggle('prim2')">Impactos</button>
+
+                <div id="prim1" hidden>
+                    <ul class="styled-list">
+                        <li>Queima de cabos</li>
+                        <li>Uso de ácidos</li>
+                        <li>Desmontagem sem proteção</li>
+                    </ul>
+                </div>
+
+                <div id="prim2" hidden>
+                    <p>Provoca doenças respiratórias, intoxicação por metais pesados e contaminação do meio ambiente.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-action">
+            <a href="index.html" class="btn btn-secondary">Voltar para Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 EcoTech - Preserve o Meio Ambiente</p>
+    </footer>
+
+    <script>
+    function toggle(id) {
+        let el = document.getElementById(id);
+        el.hidden = !el.hidden;
+    }
+
+    function subToggle(id) {
+        let el = document.getElementById(id);
+        el.hidden = !el.hidden;
+    }
+    </script>
+</body>
+</html>
